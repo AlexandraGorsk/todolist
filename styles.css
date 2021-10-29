@@ -1,0 +1,99 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: 600px;
+    margin: auto;
+    padding: 20px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+.todotitle {
+    text-align: left;
+}
+
+.title {
+    font-size: 32px;
+    text-align: center;
+    padding: 10px;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 7px;
+    margin-bottom: 10px;
+}
+
+.filter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 7px;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.input {
+    width: 90%;
+}
+
+.addbutton {
+    width: 10%;
+}
+
+.buttons {
+    background-color: blue;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 27px;
+    padding: 5px 10px;
+}
+
+.add {
+    height: 50px;
+    width: 50px;
+}
+
+.donebutton, .editbutton, .deletebutton {
+    border: none;
+    background-color: transparent;
+    height: 15px;
+    width: 15px;
+    background-repeat: no-repeat;
+    align-items: flex-end;
+}
+
+.donebutton {
+    background-image: url(images/check-solid.svg);
+}
+
+.editbutton {
+    background-image: url(images/marker-solid.svg);
+}
+
+.deletebutton {
+    background-image: url(images/trash-alt-solid.svg);
+}
