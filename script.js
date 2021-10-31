@@ -17,17 +17,16 @@ addbutton.addEventListener('click', () => {
 		alert('Поле не следует оставлять пустым');
 		return;
 	}
-
 	list.push({
 		id: list.length,
 		title: titlefield.value,
 		completed: false,
 	});
+
 	renderList(list);
 
 	titlefield.value = '';
 });
-
 const renderList = (list) => {
 	if (!list.length) {
 		todolist.innerHTML = '<h4>Nothing to do</h4>';
@@ -45,5 +44,4 @@ const renderList = (list) => {
 donebutton.addEventListener('click', () => {
 	alert('hi');
 });
-
 renderList(list);
