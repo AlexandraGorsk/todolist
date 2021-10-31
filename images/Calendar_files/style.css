@@ -1,0 +1,56 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.wrapper {
+    margin: auto;
+    width: 1000px;
+    height: 600px;
+    background-color: blanchedalmond;
+}
+#year,
+#month {
+    height: 40px;
+}
+#main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+img {
+    width: 200px;
+    height: 250px;
+    cursor: pointer;
+}
+.weekdays {
+    width: 100%;
+    height: 5rem;
+    padding: 0 0.4rem;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.weekdays div{
+  letter-spacing: .1rem;  
+}
+#calendar {
+    width: 300px;
+}
+.days{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+    column-gap: 12px;
+    text-align: center;
+    margin-left: -5px;
+}    
+.days div {
+   margin: 5px 5px 0 15px; 
+   width: 10px;
+}
+.prev-date,
+.next-date{
+    color: gray;
+}

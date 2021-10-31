@@ -9,7 +9,10 @@
     margin: auto;
     padding: 20px;
 }
-
+h4{
+    text-align: center;
+    opacity: .7;
+}
 ul {
     list-style-type: none;
 }
@@ -86,6 +89,7 @@ input {
     width: 15px;
     background-repeat: no-repeat;
     align-items: flex-end;
+    cursor: pointer;
 }
 
 .donebutton {
@@ -98,4 +102,14 @@ input {
 
 .deletebutton {
     background-image: url(images/trash-alt-solid.svg);
+}
+.deletebutton:hover{
+    transform: scale(1.2)  
+}
+.editbutton:hover{
+    transform: scale(1.2) 
+}
+
+.donebutton:hover{
+    transform: scale(1.2) 
 }
