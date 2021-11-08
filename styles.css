@@ -9,16 +9,20 @@
     margin: auto;
     padding: 20px;
 }
-h4{
+
+h4 {
     text-align: center;
     opacity: .7;
 }
+
 ul {
     list-style-type: none;
 }
-.line-through{
+
+.completed {
     text-decoration: line-through;
 }
+
 li {
     border: 1px solid #000;
     border-radius: 10px;
@@ -27,6 +31,7 @@ li {
     display: flex;
     justify-content: space-between;
 }
+
 .todotitle {
     text-align: left;
 }
@@ -69,11 +74,11 @@ input {
 }
 
 .buttons {
-    background-color: blue;
+    background-color: rgb(66, 136, 168);
     cursor: pointer;
     border-radius: 5px;
     color: #fff;
-    font-size: 27px;
+    font-size: 24px;
     padding: 5px 10px;
 }
 
@@ -103,13 +108,48 @@ input {
 .deletebutton {
     background-image: url(images/trash-alt-solid.svg);
 }
-.deletebutton:hover{
-    transform: scale(1.2)  
-}
-.editbutton:hover{
-    transform: scale(1.2) 
+
+.deletebutton:hover {
+    transform: scale(1.2)
 }
 
-.donebutton:hover{
-    transform: scale(1.2) 
+.editbutton:hover {
+    transform: scale(1.2)
+}
+
+.donebutton:hover {
+    transform: scale(1.2)
+}
+
+#modal {
+    position: absolute;
+    top: 60px;
+    left: 400px;
+    z-index: 10;
+    width: 500px;
+    height: 100px;
+    border: 1px solid;
+    border-color: rgb(117, 129, 129, .7);
+    border-radius: 5px;
+    background-color: #fff;
+    opacity: .9;
+}
+
+.modalbuttons {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.modalbuttons>button {
+    width: 70px;
+    height: 30px;
+    font-size: 16px;
+}
+
+.modalvalue {
+    margin-bottom: 10px;
+}
+.shadow{
+    background-color:rgb(117, 129, 129, .2)
 }
