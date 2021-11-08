@@ -73,12 +73,16 @@ const renderList = (list) => {
 	editbuttons.forEach((button, index) => {
 		button.onclick = () => {
 			liarr[index].classList.add('shadow');
-			const modaldiv = document.createElement('div');
+			showmodal(list[index], list, liarr[index]);
+		};
+	});
+	function showmodal(element, list, liarr) {
+		const modaldiv = document.createElement('div');
 		modaldiv.id = 'modal';
 		wrapper.append(modaldiv);
 		modaldiv.innerHTML = ` <div id="prompt-form-container">
 	<form id="prompt-form">
-	  <input class="modalvalue" name="text" placeholder = " " type="text">
+	  <input class="modalvalue" name="text" type="text">
 	  <div class="modalbuttons">
 	  <button class="edit">Ok</button>
 	  <button class="cancel">Отмена</button>
@@ -86,44 +90,43 @@ const renderList = (list) => {
 	</form>
 	</div>`;
 		const modaledit = document.querySelector('.edit');
+		const cancelbutton = document.querySelector('.cancel');
 		const modalvalue = document.querySelector('.modalvalue');
-		modaledit.onclick = () => {
-			alert(`${modalvalue.value}`);
+		modalvalue.value = element.title;
+		modaledit.onclick = (e) => {
+			e.preventDefault();
+			element.title = modalvalue.value;
+			localStorage.setItem('todo-list', JSON.stringify(list));
+			renderList(list);
+			modaldiv.remove();
 		};
+		cancelbutton.onclick = (e) => {
+			e.preventDefault();
+			modaldiv.remove();
+			liarr.classList.remove('shadow');
 		};
-	});
-	// function showmodal() {
-	// 	const modaldiv = document.createElement('div');
-	// 	modaldiv.id = 'modal';
-	// 	wrapper.append(modaldiv);
-	// 	modaldiv.innerHTML = ` <div id="prompt-form-container">
-	// <form id="prompt-form">
-	//   <input class="modalvalue" name="text" type="text">
-	//   <div class="modalbuttons">
-	//   <button class="edit">Ok</button>
-	//   <button class="cancel">Отмена</button>
-	//   </div>
-	// </form>
-	// </div>`;
-	// 	const modaledit = document.querySelector('.edit');
-	// 	const modalvalue = document.querySelector('.modalvalue');
-	// 	modaledit.onclick = () => {
-	// 		alert(`${modalvalue.value}`);
-	// 		alert(list);
-	// 	};
-	// }
+	}
 };
 
 all.addEventListener('click', function () {
+	all.classList.add('active');
+	completed.classList.remove('active');
+	uncompleted.classList.remove('active');
 	renderList(list);
 });
 completed.addEventListener('click', function () {
+	completed.classList.add('active');
+	all.classList.remove('active');
+	uncompleted.classList.remove('active');
 	let arr = list.filter((item) => item.completed === true);
 	renderList(arr);
 });
 uncompleted.addEventListener('click', function () {
-	let uncompleted = list.filter((item) => item.completed === false);
-	renderList(uncompleted);
+	uncompleted.classList.add('active');
+	all.classList.remove('active');
+	completed.classList.remove('active');
+	let uncompletedfilter = list.filter((item) => item.completed === false);
+	renderList(uncompletedfilter);
 });
 searchfield.addEventListener('input', () => {
 	let inputvalue = searchfield.value.toLowerCase();
